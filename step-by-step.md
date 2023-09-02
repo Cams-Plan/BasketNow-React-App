@@ -63,4 +63,32 @@
         ```
     7. Create and establish the routes to the homepage
         - import the homepage from *pages*
-        - 
+            `import { Homepage } from './pages';`
+        - create a Routes tag. this will be the parent to all routes
+        - nest the *Homepage* component within the Route element as the index
+            ```
+            <>
+            <Routes>
+                <Route index element={<Homepage />} />
+            </Routes>
+            </>
+            ```
+            //should return what is in Homepage component while within the root endpoint
+        - create a "catch all" route for error handling
+            This can contain a page specifically for incorrect endpoint handling, or a basic tag like in this example. For now, it will be a basic h1
+            ```
+            <>
+            <Routes>
+                <Route index element={<Homepage />} />
+                <Route path="*" element={<h1 style={{textAlign: 'center'}}>404 Page Does Not Exist</h1>}/>
+            </Routes>
+            </>
+            ```
+    8. create the next boiler plate pages. (TO DO)
+        Create all necessary pages
+        - StartTraining page
+        - TrainingHistory page
+        - Register/Login Page (TBC)
+    
+    9. Set up the Navigation (TO DO)
+

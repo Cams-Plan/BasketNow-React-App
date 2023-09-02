@@ -14,7 +14,7 @@
 2. initalise the react-dom
 
     1. 'src' directory in the root of your project
-    2. cd into the 'src' directory and create the following resources
+    2. cd into the *'src'* directory and create the following base resources
         - index.html
             create a basic html doctype with the following
             ```
@@ -41,4 +41,10 @@
             // render the application contents
             root.render(<>Hello World</>);
             ```
-    3. 
+    3. create the component pages directory
+        - create an *index.jsx* file as the centralised point for importing all pages modules.
+    4. within the pages directory, create a directory called 'Homepage'
+        - create an *index.jsx* file
+    
+
+LOOKING AT WHAT STEP TO DO NEXT

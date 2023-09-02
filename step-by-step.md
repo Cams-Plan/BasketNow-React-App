@@ -14,6 +14,7 @@
 2. initalise the react-dom
 
     1. 'src' directory in the root of your project
+    
     2. cd into the *'src'* directory and create the following base resources
         - index.html
             create a basic html doctype with the following
@@ -41,10 +42,25 @@
             // render the application contents
             root.render(<>Hello World</>);
             ```
-    3. create the component pages directory
+    
+    3. within the *src* directory, create the App.jsx file which will be the file which is the base of the application.
+        *If you do not already have the React extention with boilerplate shortcuts install the [ES7+ React/Redux/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets) extention*
+        - make a basic function component boilerplate just so data is returned as a basic troubleshoot/testing measure. *do this for every file you create*
+
+    4. create the component pages directory
         - create an *index.jsx* file as the centralised point for importing all pages modules.
-    4. within the pages directory, create a directory called 'Homepage'
+
+    5. within the pages directory, create a directory called 'Homepage'
         - create an *index.jsx* file
     
+    6. Apply consume the Router in the *src* index.jsx file to lay foundations for path routing with dirrect pages later.
+        - ensure that the BrowserRouter is imported from react-router-dom or else this won't work
 
-LOOKING AT WHAT STEP TO DO NEXT
+        `import { BrowserRouter as Router } from 'react-router-dom'`
+        - wrap the Router around the App component
+        ```
+        root.render(<Router><App/></Router>);
+        ```
+    7. Create and establish the routes to the homepage
+        - import the homepage from *pages*
+        - 

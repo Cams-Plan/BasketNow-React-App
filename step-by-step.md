@@ -105,6 +105,25 @@
             </main>
             ```
         4. setup the NavLinks with the corresponding child elements and child paths.
+        5. create another set of headers for the My Locker Room 
+            - create a component called *'MyLockerRoomHeader'* and repeat the steps for the previous header. but the nesting in *App.jsx* should look like this
+                ```
+                <Routes>
+                    <Route path='/' element={<MainHeader />}>
+                        <Route index element={<Homepage />} />
+                        <Route path="start-training" element={<StartTraining />} />
+                        <Route path="my-locker-room" element={<MyLockerRoomHeader/>}>
+                            <Route index element={<MyLockerRoom />} />
+                        </Route>
+                    </Route>
+                    <Route path="*" element={<NotFoundPage/>}/>
+                </Routes>
+                
+                ```
+    10. Install packages for Redux
+        `npm i redux redux-thunk`
+        - 'Redux' for the entire Redux library.
+        - 'Redux-Thunk' as a middleware for creating sychonicity with asychronous processes when using effects
 
     - *DON'T FORGET TO ADD A LINKING FUNCTIONALITY STEP FOR THE 404 PAGE*
 

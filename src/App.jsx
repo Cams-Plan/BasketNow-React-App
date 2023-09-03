@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { Homepage, StartTraining} from './pages';
+import { Homepage, StartTraining, NotFoundPage} from './pages';
 
 const App = () => {
   return (
@@ -8,7 +8,7 @@ const App = () => {
     <Routes>
         <Route index element={<Homepage />} />
         <Route path="/start-training" element={<StartTraining />} />
-        <Route path="*" element={<h1 style={{textAlign: 'center'}}>404 Page Does Not Exist</h1>}/>
+        <Route path="*" element={<NotFoundPage/>}/>
     </Routes>
     </>
   )

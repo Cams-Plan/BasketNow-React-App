@@ -7,7 +7,7 @@ const MyLockerRoomHeader = () => {
     <header>
         <nav>
             <NavLink to="/my-locker-room" >Locker Room Home</NavLink>
-            <NavLink to="/eoeeo">Training History</NavLink>
+            <NavLink>Training History</NavLink>
         </nav>
     </header>
     <Outlet/>

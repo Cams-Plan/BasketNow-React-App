@@ -111,5 +111,4 @@
 Okay, Now I'm ready to do more work. I plan to sort out the navigation bar
 and work on the data portion of things. e.g. Using redux OR useContext
 
-So I just refactored my code from *'Training History'* to *'MY Locker Room'*. My reasoning for this is because I'm planning ahead for future features. It would be better to have A whole page with personal details. e.g. training history
 

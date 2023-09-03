@@ -87,8 +87,30 @@
     8. create the next boiler plate pages. (TO DO)
         Create all necessary pages
         - StartTraining page
-        - TrainingHistory page
+        - MyLockerRoom page
         - Register/Login Page (TBC)
     
     9. Set up the Navigation (TO DO)
+        1. Create a directory within *components* called *'Header'* with an accompanying index.jsx file inside
+        2. import 'NavLink' and 'Outlet' from 'react-router-dom'
+            This will allow us to have links that connect to our pre-defined routes, AND the Outlet will allow us to render the route elements on the page based on the path.
+        3. nest the nav tag in a header elem and main elem.
+            ```
+            <main>
+                <header>
+                    <nav>
+                    //<contents for nav bar>
+                    </nav>
+                </header>
+            </main>
+            ```
+        4. setup the NavLinks with the corresponding child elements and child paths.
 
+    - *DON'T FORGET TO ADD A LINKING FUNCTIONALITY STEP FOR THE 404 PAGE*
+
+Okay, Now I'm ready to do more work. I plan to sort out the navigation bar
+and work on the data portion of things. e.g. Using redux OR useContext
+
+So I just refactored my code from *'Training History'* to *'MY Locker Room'*. My reasoning for this is because I'm planning ahead for future features. It would be better to have A whole page with personal details. e.g. training history
+
+My aim

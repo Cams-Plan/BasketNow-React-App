@@ -120,14 +120,72 @@
                 </Routes>
                 
                 ```
-    10. Install packages for Redux
-        `npm i redux redux-thunk`
-        - 'Redux' for the entire Redux library.
-        - 'Redux-Thunk' as a middleware for creating sychonicity with asychronous processes when using effects
+    
+### Setting Up Redux
 
-    - *DON'T FORGET TO ADD A LINKING FUNCTIONALITY STEP FOR THE 404 PAGE*
+1. Install packages for Redux
+    `npm i redux redux-thunk redux-devtools-extention react-redux`
+    - 'Redux' for the entire Redux library.
+    - 'Redux-Thunk' as a middleware for creating sychonicity with asychronous processes when using effects
+
+2. Create a redux store called *'store.jsx'* in your *src* directory
+    - import dependencies
+        ```
+        import { legacy_createStore as createStore, applyMiddleware } from "redux";
+        import {composeWithDevTools} from 'redux-devtools-extension';
+        import thunk from "redux-thunk";
+        ```
+3. Create a *'reducers'* directory in the *src* directory
+    - index.jsx file for combining all reducers
+    `import { combineReducers } from "redux";`
+    then any reducers that get created
+    e.g. `import trainingReducer from "./trainingReducer";`
+
+    code block example:
+    ```
+    import { combineReducers } from "redux"
+    import trainingReducer from "./trainingReducer";
+
+    const allReducers = combine(Reducers)
+
+    ```
+
+4. Create a *'action-creators'* directory in the *src* directory
+    - 
+
+- *DON'T FORGET TO ADD A LINKING FUNCTIONALITY STEP FOR THE 404 PAGE*
 
 Okay, Now I'm ready to do more work. I plan to sort out the navigation bar
 and work on the data portion of things. e.g. Using redux OR useContext
+
+5. bring together all resources in the *store*
+
+6. Set up the consumption of the redux resources within the root *index.jsx* file
+
+    IMPORTS
+        `import { Provider } from 'react-redux';`
+        `import store from './store';`
+
+    RENDER
+        ```
+        root.render(<Router><Provider store={store}><App/></Provider></Router>);
+        ```
+    
+## TESTING
+
+### install packages
+
+in addition to all the packages from previous in the project. install the following.
+
+`npm i -D vitest @testing-library/react @testing-library/user-event @testing-library/jest-dom jsdom @vitest/coverage-v8`
+
+- vitest
+- @testing-library/react
+- @testing-library/user-event
+- @testing-library/jest-dom
+- jsdom
+- @vitest/coverage-v8
+
+
 
 

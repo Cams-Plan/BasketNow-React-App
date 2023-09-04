@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
-//import placeholderReducer from './placeholderReducer'
 //import all my reducers one after the other
+import trainingBlockReducer from "./TrainingBlockReducer";
 
 const allReducers = combineReducers({
-    //placeholder: placeholderReducer
+    trainingBlock: trainingBlockReducer
 })
 
-export default allReducers
+export default allReducers;

@@ -1,14 +1,26 @@
-/* main {
+main {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
     flex: 1;
-} */
+}
 
 #App {
     color: blueviolet;
 }
-/* 
-TRYING TO FIGURE OUT THE MAIN SECTION */
+
+.addButtons {
+    /* border-radius: 50%; */
+    border-width: 0px;
+    width: 30px;
+    height: 30px;
+}
+
+.addButtons:hover {
+    background-color: rgb(201, 248, 229);
+}
+.addButtons:focus {
+    background-color: rgb(159, 244, 210);
+}

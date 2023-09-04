@@ -1,9 +1,17 @@
+//dependencies
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+
+
+// files
 import { Homepage, StartTraining, NotFoundPage, MyLockerRoom} from './pages';
 import { MainHeader, MyLockerRoomHeader } from './components';
 
+
+
 const App = () => {
+
+
   return (
     <>
     <Routes>

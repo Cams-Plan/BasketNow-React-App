@@ -14,5 +14,5 @@ import store from './store';
 const root = createRoot(document.getElementById("root"))
 
 // render the application contents
-root.render(<Router><Provider store={store}><App/></Provider></Router>);
+root.render(<Provider store={store}><Router><App/></Router></Provider>);
 

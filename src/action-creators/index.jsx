@@ -1,1 +1,1 @@
-export * as actionCreators from "./placeholder-action-creators"
+export * as actionCreators from "./action-creators"

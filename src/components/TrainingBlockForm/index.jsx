@@ -19,13 +19,14 @@ const TrainingBlockForm = () => {
         "half court": ["5 spot closouts", "box drill"]
     }
   }
-
+// ADD EXTRA VALUES TO EACH OPTION VALUE [drill, timed/set-reps]
 
   return (
     <>
     <form className='training-block'>
-      {trainingKPI == "set-reps" ? <input type="text" name="" id="" /> : <input type="time" name="duration" id="" />}
-      
+      {trainingKPI === "timed" ? <><label htmlFor="rep-range">Reps: </label>
+      <input type="number" name="rep-range" id="" min={0} /></> : <input type="time" name="duration" id="" />}
+  
       <select defaultValue={"--Select Training Drill--"} id="training-select" onChange={(e) => changeOptionPeripheral(e.target.selectedOptions[0].className)}>
         <option disabled value="--Select Training Drill--">--Select Training Drill--</option>
         <optgroup label='Offense'/>

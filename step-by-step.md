@@ -170,7 +170,14 @@ and work on the data portion of things. e.g. Using redux OR useContext
         ```
         root.render(<Router><Provider store={store}><App/></Provider></Router>);
         ```
-    
+### Start Training Page
+
+|components | functionality      | path |
+|:----------|:-------------------|:----:| 
+|Add Training Block Button | adds a training block form when clicked | ./AddTrainingBlockButton/index.jsx |
+
+
+
 ## TESTING
 
 ### install packages

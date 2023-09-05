@@ -6,3 +6,20 @@ export const addTrainingBlock = () => {
         })
     }
 }
+
+export const sendTrainingOptions = () => {
+    return (dispatch) => {
+        dispatch({
+            type: "send training options"
+        })
+    }
+}
+
+export const changeOptionPeripheral = (data) => {
+    return (dispatch) => {
+        dispatch({
+            type: "change option-type",
+            payload: data
+        })
+    }
+}

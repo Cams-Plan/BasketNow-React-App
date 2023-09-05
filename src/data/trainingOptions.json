@@ -1,0 +1,10 @@
+[{
+    "offense": {
+        "fullCourt": ["fullcourt 4 lay-up drill", "end-to-end 3-point shooting", "end-to-end mid-range shooting"],
+        "halfCourt": ["free-for-all 3-point shooting", "5-spot 3-point shooting", "around the key", "around the key (extended)", "free-for-all mid-range shooting"]
+    },
+    "defence": {
+        "fullCourt": ["slide and recover", "baseline-sideline 8's"],
+        "halfCourt": ["5 spot closouts", "box drill"]
+    }
+}]

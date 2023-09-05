@@ -1,13 +1,29 @@
 import React from 'react'
-import { AddTrainingBlockButton } from '../../components';
-
+import { AddTrainingBlockButton, TrainingBlockForm } from '../../components';
+import { useSelector } from "react-redux";
 const StartTraining = () => {
 
+  const trainingBlockElems = useSelector(state => state.numTrainingBlocks)
+
+  const arrayRange = (start, stop, step) => Array.from(
+    {length: (stop - start) / step + 1},
+    (value, index) => start + index * step
+  );
+  
+  
+  const elements = arrayRange(0, trainingBlockElems, 1)
   
 
   return (
     <>
-    <div>StartTraining</div>
+    <h1>StartTraining</h1>
+    <div>
+      <h2>Training Blocks: {trainingBlockElems > 0 ? trainingBlockElems+1: 1}</h2>
+    </div>
+    <div>
+      {elements.map((i, index) => <p key={index}>hello</p>)}
+    </div>
+    <TrainingBlockForm/>
     <AddTrainingBlockButton/>
     </>
   )

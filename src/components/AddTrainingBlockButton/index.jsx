@@ -6,20 +6,13 @@ import {bindActionCreators} from 'redux';
 
 const AddTrainingBlockButton = () => {
 
-  const trainingBlockElems = useSelector(state => state.trainingBlock)
   const dispatch = useDispatch();
   const { addTrainingBlock } = bindActionCreators(actionCreators, dispatch);
 
-  const sections = () => {
-    for (let index = 0; index < array.length; index++) {
-      const element = array[index];
-      
-    }
-  }
+  // const hdkd = <>{(sections) => sections.map(el) => <}</>
 
   return (
     <>
-    <h1>{trainingBlockElems}</h1>
     <button className='addButtons' onClick={() => addTrainingBlock()}>+</button>
     </>
   )

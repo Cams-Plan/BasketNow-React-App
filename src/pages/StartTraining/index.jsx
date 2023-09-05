@@ -21,9 +21,9 @@ const StartTraining = () => {
       <h2>Training Blocks: {trainingBlockElems > 0 ? trainingBlockElems+1: 1}</h2>
     </div>
     <div>
-      {elements.map((i, index) => <p key={index}>hello</p>)}
+      {elements.map((blockNum, index) => <TrainingBlockForm/>)}
     </div>
-    <TrainingBlockForm/>
+    
     <AddTrainingBlockButton/>
     </>
   )

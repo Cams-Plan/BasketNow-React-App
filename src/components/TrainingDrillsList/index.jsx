@@ -27,7 +27,7 @@ const TrainingDrillList = () => {
     <div>Training Drills: {drillBlock}</div>
     <form id={`trainingBlockForm`} onSubmit={console.log("submitted")}>
         <input type="datetime-local" name="" style={{margin: "15px 0px 15px 80px"}} id={`trainingBlockDate${drillBlock}`} />
-        {elements.map((drillNum, index) => <div><TrainingBlockForm key={index}/></div>)}
+        {elements.map((drillNum, index) => <div key={index}><TrainingBlockForm key={index}/></div>)}
         
     </form>
     <button className='addButtons' id='addDrillBtn' onClick={() => setDrillBlock(drillBlock + 1)}>+</button>

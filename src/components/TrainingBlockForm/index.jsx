@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { useSelector, useDispatch } from "react-redux";
 import { actionCreators } from '../../action-creators';
@@ -7,9 +7,11 @@ import {bindActionCreators} from 'redux';
 
 const TrainingBlockForm = () => {
 
-  const trainingKPI = useSelector(state => state.trainingType)
+  // const trainingKPI = useSelector(state => state.trainingType)
   const dispatch = useDispatch();
   const { changeOptionPeripheral, addTrainingDrill, removeTrainingDrill } = bindActionCreators(actionCreators, dispatch)
+
+  const [trainingKPI, setTrainingKPI] = useState()
 
   const trainingDrillElems = useSelector(state => state.trainingDrills)
 
@@ -30,7 +32,7 @@ const TrainingBlockForm = () => {
       {trainingKPI === "timed" ? <><label htmlFor="rep-range"><img src="./repeat-black.png" alt="reps" className='training-icon'/></label>
       <input type="number" name="rep-range" id="" min={0} max={1000}/></> : <> <label htmlFor="minutes"><img src="./chronometer.png" alt="timer" className='training-icon'/></label><input type="number" name="minutes" id="" min={0} max={60} step={.5}/></>}
 
-      <select defaultValue={"--Select Training Drill--"} id="training-select" onChange={(e) => changeOptionPeripheral(e.target.selectedOptions[0].className)}>
+      <select defaultValue={"--Select Training Drill--"} onChange={(e) => setTrainingKPI(e.target.selectedOptions[0].className)}>
         <option disabled value="--Select Training Drill--">--Select Training Drill--</option>
         <optgroup label='Offense'/>
           <optgroup label='Full-Court Offence'>

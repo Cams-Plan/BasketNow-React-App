@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { useSelector, useDispatch } from "react-redux";
 import { actionCreators } from '../../action-creators';
@@ -11,7 +11,11 @@ const TrainingDrillList = () => {
     const dispatch = useDispatch();
     const { addTrainingDrill, removeTrainingDrill } = bindActionCreators(actionCreators, dispatch)
 
+    const [drillBlock, setDrillBlock] = useState(1)
 
+    useEffect(() => {
+        console.log(drillBlock)
+    }, [() => setDrillBlock()])
 
   return (
     <>
@@ -19,7 +23,7 @@ const TrainingDrillList = () => {
     <form action="">
     <TrainingBlockForm/>
     </form>
-    <button className='addButtons' id='addDrillBtn'>+</button>
+    <button className='addButtons' id='addDrillBtn' onClick={() => setDrillBlock(drillBlock + 1)}>+</button>
     </>
     
   )

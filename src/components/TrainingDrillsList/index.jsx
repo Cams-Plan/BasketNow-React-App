@@ -25,7 +25,7 @@ const TrainingDrillList = () => {
   return (
     <>
     <div>Training Drills: {drillBlock}</div>
-    <form id={`trainingBlockForm`} onSubmit={console.log("submitted")}>
+    <form id={`trainingBlockForm`} onSubmit={() => console.log("submitted")}>
         <input type="datetime-local" name="" style={{margin: "15px 0px 15px 80px"}} id={`trainingBlockDate${drillBlock}`} />
         {elements.map((drillNum, index) => <div key={index}><TrainingBlockForm key={index}/></div>)}
         

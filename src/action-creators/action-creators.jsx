@@ -18,8 +18,26 @@ export const sendTrainingOptions = () => {
 export const changeOptionPeripheral = (data) => {
     return (dispatch) => {
         dispatch({
-            type: "change option-type",
-            payload: data
+            type: "CHANGE_OPTION-TYPE",
+            KPI: data
+        })
+    }
+}
+
+export const addTrainingDrill = () => {
+    return (dispatch) => {
+        dispatch({
+            type: "ADD_TRAINING_DRILL",
+            payload: 1
+        })
+    }
+}
+
+export const removeTrainingDrill = () => {
+    return (dispatch) => {
+        dispatch({
+            type: "REMOVE_TRAINING_DRILL",
+            payload: 1
         })
     }
 }

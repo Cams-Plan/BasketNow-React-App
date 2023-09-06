@@ -1,5 +1,5 @@
 import React from 'react'
-import { AddTrainingBlockButton, TrainingBlockForm } from '../../components';
+import { AddTrainingBlockButton, TrainingDrillList } from '../../components';
 import { useSelector } from "react-redux";
 const StartTraining = () => {
 
@@ -20,10 +20,8 @@ const StartTraining = () => {
     <div>
       <h2>Training Blocks: {trainingBlockElems > 0 ? trainingBlockElems+1: 1}</h2>
     </div>
-    <div>
-      {elements.map((blockNum, index) => <TrainingBlockForm/>)}
-    </div>
     
+    {elements.map((blockNum, index) => <TrainingDrillList key={index}/>)}
     <AddTrainingBlockButton/>
     </>
   )

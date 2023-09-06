@@ -1,12 +1,7 @@
-const trainingTypeReducer = (state = "", action) => {
+const trainingTypeReducer = (state = '', action) => {
     switch (action.type) {
-        case "change option-type":
-            if (action.payload){
-                return state = action.payload
-            } else {
-                return state
-            }
-            ;
+        case "CHANGE_OPTION-TYPE":
+            return state = action.KPI;
         default:
             return state;
     }

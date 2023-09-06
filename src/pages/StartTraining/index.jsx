@@ -30,8 +30,8 @@ const StartTraining = () => {
         </div>
       </div>
     
-    {elements.map((blockNum, index) => <TrainingDrillList key={index}/>)}
-    <AddTrainingBlockButton/>
+    {<TrainingDrillList/>}
+    {/* <AddTrainingBlockButton/> RE-ADD THIS LATER*/}
     </>
   )
 }

@@ -16,21 +16,22 @@ const TrainingDrillList = () => {
         (value, index) => start + index * step
     );
 
-    const [drillBlock, setDrillBlock] = useState(1)
-
     useEffect(() => {
         console.log(drillBlock)
     }, [() => setDrillBlock()])
-    
+    const [drillBlock, setDrillBlock] = useState(1)
     const elements = arrayRange(1, drillBlock, 1)
 
   return (
     <>
     <div>Training Drills: {drillBlock}</div>
-    <form action="">
-    {elements.map((drillNum, index) => <div><TrainingBlockForm/></div>)}
+    <form id={`trainingBlockForm`} onSubmit={console.log("submitted")}>
+        <input type="datetime-local" name="" style={{margin: "15px 0px 15px 80px"}} id={`trainingBlockDate${drillBlock}`} />
+        {elements.map((drillNum, index) => <div><TrainingBlockForm key={index}/></div>)}
+        
     </form>
     <button className='addButtons' id='addDrillBtn' onClick={() => setDrillBlock(drillBlock + 1)}>+</button>
+    <button type='submit' form={`trainingBlockForm`} className='formSubmitBtn'><img src="./lock.png" alt="padlock png" className='padlock'/></button>
     </>
     
   )

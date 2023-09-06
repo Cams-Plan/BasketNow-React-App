@@ -63,3 +63,27 @@ main {
 .key-rows > p {
     margin-left: 10px;
 }
+
+.formSubmitBtn {
+    width: 30px;
+    height: 30px;
+    margin-top: 15px;
+    background-color: rgb(236, 182, 57);
+    border: 1px solid rgb(236, 182, 57);
+    border-width: 20%;
+    border-radius: 30%;
+}
+
+.formSubmitBtn:hover {
+    background-color: rgb(232, 170, 26);
+    border-color: rgb(232, 170, 26);
+}
+
+.formSubmitBtn:focus {
+    background-color: rgb(255, 199, 68);
+    border-color: rgb(255, 199, 68);
+}
+
+.padlock {
+    width: 80%;
+}

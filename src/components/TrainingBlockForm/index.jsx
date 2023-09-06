@@ -52,7 +52,7 @@ const TrainingBlockForm = () => {
             {Object.values(options.defence['half court']).map((option, i) => <option key={`hcd${i}`} className={option[1]}>{option[0]}</option>)}
           </optgroup>
       </select>
-      <input type="datetime-local" name="" id="" />
+      {/* <input type="datetime-local" name="" id="" /> RE-LATER*/}
     </>
   )
 }

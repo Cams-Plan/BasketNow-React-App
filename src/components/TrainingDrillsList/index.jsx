@@ -20,7 +20,6 @@ const TrainingDrillList = () => {
 
     useEffect(() => {
         console.log(drillBlock)
-        console.log(elements)
     }, [() => setDrillBlock()])
     
     const elements = arrayRange(1, drillBlock, 1)

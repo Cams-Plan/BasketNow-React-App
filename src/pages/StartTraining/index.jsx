@@ -17,9 +17,18 @@ const StartTraining = () => {
   return (
     <>
     <h1>StartTraining</h1>
-    <div>
-      <h2>Training Blocks: {trainingBlockElems > 0 ? trainingBlockElems+1: 1}</h2>
-    </div>
+    <h2>Training Blocks: {trainingBlockElems > 0 ? trainingBlockElems+1: 1}</h2>
+      <div className='key-col'>
+        <h3>Key:</h3>
+        <div className='key-rows'>
+          <img src="./chronometer.png" alt="" className='kpi-keys' />
+          <p>{"= Timer (minutes)"}</p>
+        </div>
+        <div className='key-rows'>
+          <img src="./repeat-black.png" alt="" className='kpi-keys' />
+          <p>{"= Total Reps"}</p>
+        </div>
+      </div>
     
     {elements.map((blockNum, index) => <TrainingDrillList key={index}/>)}
     <AddTrainingBlockButton/>

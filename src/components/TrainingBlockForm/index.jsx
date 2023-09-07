@@ -5,7 +5,7 @@ import { actionCreators } from '../../action-creators';
 import {bindActionCreators} from 'redux';
 
 
-const TrainingBlockForm = () => {
+const TrainingBlockForm = ({ setTrainingDrillKPIInputs, setTrainingDrillInputs,  trainingDrillInputs, trainingDrillKPIInputs, kpiref }) => {
 
   // const trainingKPI = useSelector(state => state.trainingType)
   const dispatch = useDispatch();
@@ -13,7 +13,7 @@ const TrainingBlockForm = () => {
 
   const [trainingKPI, setTrainingKPI] = useState()
 
-  const trainingDrillElems = useSelector(state => state.trainingDrills)
+  // const trainingDrillElems = useSelector(state => state.trainingDrills)
 
   const options = {
     "offense": {
@@ -25,14 +25,22 @@ const TrainingBlockForm = () => {
         "half court": [["5 spot closeouts", "timed"], ["box drill", "set-reps"]]
     }
   }
-// ADD EXTRA VALUES TO EACH OPTION VALUE [drill, timed/set-reps]
+
+  const handleKPIInputs = (e) => {
+    e.preventDefault()
+    const kpi = e.target.value
+    console.log("kpi from handlekpi",kpi)
+    const kpiLength = kpi.Length
+    console.log("legnth fron handlekpi",kpiLength)
+    trainingDrillKPIInputs.push(kpi[kpiLength-1])
+  } 
 
   return (
     <>
       {trainingKPI === "timed" ? <><label htmlFor="rep-range"><img src="./repeat-black.png" alt="reps" className='training-icon'/></label>
-      <input type="number" name="rep-range" id="" min={0} max={1000}/></> : <> <label htmlFor="minutes"><img src="./chronometer.png" alt="timer" className='training-icon'/></label><input type="number" name="minutes" id="" min={0} max={60} step={.5}/></>}
+      <input type="number" name="rep-range" id={""} min={0} max={1000} onChange={(e) => trainingDrillKPIInputs.push(e.target.value)}/></> : <> <label htmlFor="minutes"><img src="./chronometer.png" alt="timer" className='training-icon'/></label><input type="number" name="minutes" id={""} min={0} max={60} step={.5} onChange={(e) => trainingDrillKPIInputs.push(e.target.value)} ref={kpiref}/></>}
 
-      <select defaultValue={"--Select Training Drill--"} onChange={(e) => setTrainingKPI(e.target.selectedOptions[0].className)}>
+      <select defaultValue={"--Select Training Drill--"} name='drill' id={""} onChange={(e) => {setTrainingKPI(e.target.selectedOptions[0].className), trainingDrillInputs.push([e.target.selectedOptions[0].value, e.target.selectedOptions[0].className])}}>
         <option disabled value="--Select Training Drill--">--Select Training Drill--</option>
         <optgroup label='Offense'/>
           <optgroup label='Full-Court Offence'>
@@ -56,5 +64,5 @@ const TrainingBlockForm = () => {
     </>
   )
 }
-
+// onChange={(e) => setTrainingBlockDate([e.target.value])
 export default TrainingBlockForm

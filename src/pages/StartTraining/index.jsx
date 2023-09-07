@@ -1,17 +1,35 @@
-import React from 'react'
+import React, { useRef, useState} from 'react'
 import { AddTrainingBlockButton, TrainingDrillList } from '../../components';
-import { useSelector } from "react-redux";
+import { useSelector } from "react-redux";;
 const StartTraining = () => {
 
   const trainingBlockElems = useSelector(state => state.numTrainingBlocks)
 
+  const [trainingDrillInputs, setTrainingDrillInputs] = useState([])
+  const [trainingBlockDate, setTrainingBlockDate] = useState([])
+  const [trainingDrillKPIInputs, setTrainingDrillKPIInputs] = useState([])
+  
+  const kpiref = useRef(undefined)
+  
   const arrayRange = (start, stop, step) => Array.from(
     {length: (stop - start) / step + 1},
     (value, index) => start + index * step
   );
-  
-  
+
   const elements = arrayRange(0, trainingBlockElems, 1)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const form = e.target
+    console.log(form)
+    console.log(trainingDrillKPIInputs)
+    // console.log(trainingBlockDate)
+    // console.log(trainingDrillInputs)
+    // console.log(trainingDrillKPIInputs.length)
+    // console.log(trainingDrillKPIInputs)
+    
+  }
+
   
 
   return (
@@ -29,9 +47,8 @@ const StartTraining = () => {
           <p>{"= Total Reps"}</p>
         </div>
       </div>
-    
-    {<TrainingDrillList/>}
-    {/* <AddTrainingBlockButton/> RE-ADD THIS LATER*/}
+    <TrainingDrillList handleSubmit={handleSubmit} setTrainingBlockDate={setTrainingBlockDate} trainingDrillInputs={trainingDrillInputs} setTrainingDrillInputs={setTrainingDrillInputs} trainingDrillKPIInputs={trainingDrillKPIInputs} setTrainingDrillKPIInputs={setTrainingDrillKPIInputs} kpiref={kpiref}/>
+    {/* <AddTrainingBlockButton/> RE-ADD THIS LATER */}
     </>
   )
 }

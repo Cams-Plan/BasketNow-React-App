@@ -6,7 +6,7 @@ import {bindActionCreators} from 'redux';
 
 import { TrainingBlockForm } from '../../components';
 
-const TrainingDrillList = () => {
+const TrainingDrillList = ({handleSubmit, setTrainingDrillKPIInputs, setTrainingDrillInputs, setTrainingBlockDate, trainingDrillInputs, trainingDrillKPIInputs, kpiref}) => {
 
     const dispatch = useDispatch();
     const { addTrainingDrill, removeTrainingDrill } = bindActionCreators(actionCreators, dispatch)
@@ -25,9 +25,10 @@ const TrainingDrillList = () => {
   return (
     <>
     <div>Training Drills: {drillBlock}</div>
-    <form id={`trainingBlockForm`} onSubmit={() => console.log("submitted")}>
-        <input type="datetime-local" name="" style={{margin: "15px 0px 15px 80px"}} id={`trainingBlockDate${drillBlock}`} />
-        {elements.map((drillNum, index) => <div key={index}><TrainingBlockForm key={index}/></div>)}
+    <form id={`trainingBlockForm`} onSubmit={(e) => handleSubmit(e)}>
+        <input type="datetime-local" name="" style={{margin: "15px 0px 15px 80px"}} id={`trainingBlockDate${drillBlock}`} onChange={(e) => setTrainingBlockDate([e.target.value])}/>
+
+        {elements.map((drillNum, index) => <div key={index}><TrainingBlockForm new={index} setTrainingDrillInputs={setTrainingDrillInputs} setTrainingDrillKPIInputs={setTrainingDrillKPIInputs} trainingDrillInputs={trainingDrillInputs} trainingDrillKPIInputs={trainingDrillKPIInputs} kpiref={kpiref} /></div>)}
         
     </form>
     <button className='addButtons' id='addDrillBtn' onClick={() => setDrillBlock(drillBlock + 1)}>+</button>
